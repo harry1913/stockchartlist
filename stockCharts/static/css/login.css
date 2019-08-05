@@ -1,0 +1,105 @@
+.login-form {
+  float:none;
+  margin: 30px auto;
+}
+  .login-form form {        
+    margin-bottom: 15px;
+      padding: 30px;
+  }
+  .login-form h2 {
+      margin: 0 0 15px;
+  }
+  .form-control, .login-btn {
+      min-height: 38px;
+      border-radius: 2px;
+  }
+  .input-group-addon .fa {
+      font-size: 18px;
+  }
+  .login-btn {
+      font-size: 15px;
+      font-weight: bold;
+  }
+  .social-btn .btn {
+    border: none;
+    margin: 10px 5px 0;
+    opacity: 1;
+    width: 150px;
+    font-size: 15px;
+    font-weight: 600;
+}
+  .social-btn .btn:hover {
+      opacity: 0.9;
+  }
+.social-btn .btn-primary {
+      background: #507cc0;
+  }
+.social-btn .btn-info {
+  background: #64ccf1;
+}
+.social-btn .btn-danger {
+  background: #df4930;
+}
+  .or-seperator {
+    text-align: center;
+    border-top: 1px solid #ccc;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 18px;
+    margin-bottom: -5px;
+  }
+  .or-seperator span {
+      padding: 0 10px;
+      background: #fff;
+      position: relative;
+      top: -11px;
+      z-index: 1;
+  }   
+
+  *:not(.fa) {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+.fa-google, .fa-facebook {
+  float: left;
+  border-right: solid 1px rgba(255,255,255,0.5);
+}
+
+.fa-google {
+  margin-top: 3px;
+  padding-right: 7px;
+  margin-left: -3px;
+}
+
+a.btn.btn-danger, a.btn.btn-primary {
+  padding-right: 17px;
+}
+
+.fa-facebook {
+  margin-top: 4px;
+  padding-right: 10px;
+}
+.text-center.social-btn a, button {
+  letter-spacing: 1px;
+}
+
+@media (max-width: 576px) {
+  .login-form {
+   padding: 40px 10px 70px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form {
+    /*padding: 40px 10px 20px 10px;*/
+  }
+
+  .label-input100 {
+    text-align: left;
+    position: unset;
+    top: unset;
+    left: unset;
+    width: 100%;
+    padding: 0 5px;
+  }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>StockChartList</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+		  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		  <script src="/static/js/home.js?ver=0.0369921"></script>
+		<link rel="stylesheet" type="text/css"	href="/static/css/home.css?ver=0.03194" />
+		
+		<script>
+			$(document).ready(function() {
+				var data = "{{ resultData|safe }}";
+				$("#stock-charts").append(data);
+				
+				var btn = $('#top-button');
+
+				$(window).scroll(function() {
+				  if ($(window).scrollTop() > 150) {
+				    btn.addClass('show');
+				  } else {
+				    btn.removeClass('show');
+				  }
+				});
+
+				btn.on('click', function(e) {
+				  e.preventDefault();
+				  $('html, body').animate({scrollTop:0}, '300');
+				});
+				
+				$('#zoomBtn').click(function() {
+					  $('.zoom-btn-sm').toggleClass('scale-out');
+					  if (!$('.zoom-card').hasClass('scale-out')) {
+					    $('.zoom-card').toggleClass('scale-out');
+					  }
+				});
+
+			});
+		</script>
+	</head>
+	<body>
+		<div class="row">
+			<div class="col-md-3 col-lg-3">
+				<div class="form-group has-search">
+				    <input type="text" class="form-control" placeholder="Search" id="stock-input-auto" />
+				    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+				</div>	
+			</div>
+			<div class="col-md-4">
+ 				<button class="btn btn-mini btn-info" id="logout" onclick="logout()">로그아웃</button>
+				<button class="btn btn-success" id="day" onclick="changeChartType(this)">일봉</button>
+				<button class="btn btn-danger" id="week" onclick="changeChartType(this)">주봉</button>
+				<button class="btn btn-primary" id="month" onclick="changeChartType(this)">월봉</button>
+ 			</div>
+		</div>
+		<div class="row" id="stock-charts">
+<!--  			<div class="col-md-4">
+ 				<div>
+					<img src="https://fn-chart.dunamu.com/images/kr/candle/d/A005930.png" class="img-responsive" alt="Responsive image">
+				</div>
+				<div>
+					<p>TEST</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<img src="https://fn-chart.dunamu.com/images/kr/candle/d/A005930.png" class="img-responsive" alt="Responsive image">
+			</div>  -->
+		</div>
+	 <a id="top-button"></a>
+<!-- 		
+		<div class="zoom">
+		  <a class="zoom-fab zoom-btn-large" id="zoomBtn">Open</a>
+		  <ul class="zoom-menu">
+		    <li><a class="zoom-fab zoom-btn-sm zoom-btn-person scale-transition scale-out" id="day" onclick="changeChartType(this)">일봉</a></li>
+		    <li><a class="zoom-fab zoom-btn-sm zoom-btn-tangram scale-transition scale-out" id="week" onclick="changeChartType(this)">주봉</a></li>
+		    <li><a class="zoom-fab zoom-btn-sm zoom-btn-report scale-transition scale-out" id="month" onclick="changeChartType(this)">월봉</a></li>
+		    <li><a class="zoom-fab zoom-btn-sm zoom-btn-feedback scale-transition scale-out" id="logout" onclick="logout()">로그아웃</a></li>
+		  </ul>
+		</div>		
+ -->
+		
+	</body>
+</html>

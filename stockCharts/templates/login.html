@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />		  
+		  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		  <script src="/static/js/login.js?ver=0.0194"></script>
+		<link rel="stylesheet" type="text/css"	href="/static/css/login.css?ver=0.0295" />
+		
+	</head>
+	<body>
+		<div class="login-form col-lg-3 col-md-4 col-sm-6">
+		    <form action="login" method="post">
+		      <div class="form-group">
+		        <div class="input-group">
+		          <span class="input-group-addon"><i class="fa fa-user"></i></span>
+		          <input type="text" class="form-control" name="no" placeholder="아이디" required="required">
+		        </div>
+		      </div>
+		      <div class="form-group">
+		        <div class="input-group">
+		          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+		          <input type="password" class="form-control" name="password" placeholder="패스워드" required="required">
+		        </div>
+		      </div>
+		      <div class="form-group">
+		        <button type="submit" class="btn btn-primary login-btn btn-block">로그인</button>
+		      </div>
+		      <div class="clearfix">
+		        <label class="pull-left checkbox-inline"><input type="checkbox"> 아이디 저장하기</label>
+<!-- 				<a href="#" class="pull-right">Forgot Password?</a>  -->
+		      </div>
+              {% if login_fail == 1 %}
+              <span style="color:red"><strong>Warning!!:</strong>확인 바람</span>
+              {% endif %}		      
+<!-- 
+		      <div class="or-seperator"><span>or</span></div>
+		    <div class="text-center social-btn">
+		      <a href="#" class="btn btn-danger"><i class="fa fa-google"></i>&nbsp; Google</a>
+		      <a href="#" class="btn btn-primary"><i class="fa fa-facebook"></i>&nbsp; Facebook</a>
+		    </div>
+-->
+		  </form>
+<!--	  <p class="text-center text-muted small">Don't have an account? <a href="#">Sign up here!</a></p> 	-->
+		</div>	    
+	</body>
+</html>
