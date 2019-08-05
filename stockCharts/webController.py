@@ -246,5 +246,6 @@ def check_session():
     return user_id.decode('utf8', 'ignore')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run('0.0.0.0',port='5000', debug=True)
+#     app.run(debug=True)
 #     app.run('192.168.123.131',port='5000', debug=True)
