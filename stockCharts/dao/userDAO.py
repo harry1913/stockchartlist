@@ -80,8 +80,8 @@ class User(object):
         return False
 
 # if __name__ == '__main__':
-#     test = User('vipmember', 'qkrguscjf')
+#     test = User('bong', 'bong')
 #     test.create_user()
-# #     test.login()
+#     test.login()
     
     
