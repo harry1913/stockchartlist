@@ -134,9 +134,15 @@ def home():
     
     db_class = dbModule.Database()
     
-    sql = "SELECT list_Code as displayedCode, list_Name as value, list_Acode as id \
-            FROM UserStockList \
-            WHERE user_Id = '" + userId + "' AND status='I'"
+    sql = "SELECT list_Code as displayedCode, list_Name as value, list_Acode as id, user_Id as auth \
+            FROM UserStockList\
+            WHERE "
+    if userId == 'admin':
+        sql += "status='I'"
+    else:
+        sql += "user_Id = '" + userId + "' AND status='I'"
+        
+    sql += "ORDER BY user_Id"
 
     row = db_class.executeAll(sql)
     tags = ''
@@ -145,6 +151,8 @@ def home():
         r['displayedCode'] = r['displayedCode'].decode('utf8', 'ignore')
         r['value'] = r['value'].decode('utf8', 'ignore')
         r['id'] = r['id'].decode('utf8', 'ignore')
+        r['auth'] = r['auth'].decode('utf8', 'ignore')
+        r['userId'] = userId
         tags += generateChartDivTag(r)
     
     app.logger.info("::::::: result for UserStockList table ::::::: \n %s", row)
@@ -221,6 +229,9 @@ def generateChartDivTag(info):
         
         tag += "<span class='info-price'>" + data[0]['current'] + " </span> <br>\
                     <span class='info-fluctuation' style='color:"+ style +"'><i class='" + arrow + "' style='font-size:1.8rem'></i>  " + data[1]['gap'] + " " + symbol + data[2]['percent'] + "% </span>"
+    
+        if info['userId'] == 'admin':
+            tag += "<span class='label label-primary' style='font-family:Open Sans, Helvetica, Arial, sans-serif; font-weight: lighter; font-size: 0.8em;'>" + info['auth'] + "</span>"
     
     tag += "<div class='chart-buttons'> \
             <button class='btn btn-mini btn-danger chart-img-remove' value='" + info['id'] + "' onclick='deleteStockImg(this)'>X</button> \
