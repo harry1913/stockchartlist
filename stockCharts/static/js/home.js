@@ -170,7 +170,7 @@ $( function() {
 				    		  	  id : v.code,
 				    		  	  displayedCode : v.displayedCode,
 				    		  	  assetId : v.assetId,
-				    		  	  userId : $("#userid").html()
+				    		  	  userId : ""
 				    		  };
 				    	  }));
 				      }
