@@ -169,7 +169,8 @@ $( function() {
 				    		  	  value : v.name,
 				    		  	  id : v.code,
 				    		  	  displayedCode : v.displayedCode,
-				    		  	  assetId : v.assetId
+				    		  	  assetId : v.assetId,
+				    		  	  userId : $("#userid").html()
 				    		  };
 				    	  }));
 				      }

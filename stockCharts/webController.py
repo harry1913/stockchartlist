@@ -257,6 +257,6 @@ def check_session():
     return user_id.decode('utf8', 'ignore')
 
 if __name__ == '__main__':
-    app.run(threaded=True, host='0.0.0.0')
+    app.run(host='0.0.0.0')
 #     app.run(debug=True)
 #     app.run('192.168.123.131',port='5000', debug=True)
